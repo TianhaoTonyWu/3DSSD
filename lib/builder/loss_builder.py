@@ -87,6 +87,18 @@ class LossBuilder:
             assigned_boxes_3d = label_dict[maps_dict.GT_BOXES_ANCHORS_3D][index]
             ctr_ness = self._generate_centerness_label(base_xyz, assigned_boxes_3d, pmask)
             gt_cls = gt_cls * tf.expand_dims(ctr_ness, axis=-1)
+            
+            # E(r)
+            
+            # f_j: frequency o category j
+            
+            # T_lambda
+            
+            # weight w array
+            
+            # dot product w array and cls_loss
+            
+            
             cls_loss = tf.nn.sigmoid_cross_entropy_with_logits(labels=gt_cls, logits=pred_cls)
             cls_loss = tf.reduce_mean(cls_loss, axis=-1)
 
