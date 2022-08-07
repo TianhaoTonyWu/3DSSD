@@ -88,9 +88,6 @@ class LossBuilder:
             ctr_ness = self._generate_centerness_label(base_xyz, assigned_boxes_3d, pmask)
             gt_cls = gt_cls * tf.expand_dims(ctr_ness, axis=-1)
             
-            print(gt_cls + "\n")
-            
-            print(pred_cls + "\n")
             # E(r) array
             
             # f_j: frequency o category j array
